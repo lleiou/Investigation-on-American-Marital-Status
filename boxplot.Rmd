@@ -8,7 +8,7 @@ output: pdf_document
 Below is the 3rd part of the [workflow](https://github.com/TZstatsADS/cycle1-7/blob/master/Ideas%20of%20Topic.md)
 
 First we load all the packages:
-```{r, echo = TRUE, message=TRUE}
+```{r, echo = FALSE}
 library("survey")
 library("dplyr")
 library("data.table")
