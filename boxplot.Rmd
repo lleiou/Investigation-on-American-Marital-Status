@@ -16,6 +16,8 @@ library("ggplot2")
 library("choroplethr")
 library("choroplethrMaps")
 
+readRDS("../hp.RDS")
+
 ```
 
 
