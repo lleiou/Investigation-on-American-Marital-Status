@@ -19,7 +19,7 @@ library("choroplethrMaps")
 
 
 
-#getting the data frame from household data
+###getting the data frame from household data
 
 ```{r}
 colsToKeep<-c("ST","FINCP","HINCP","FES","SERIALNO","WGTP")
@@ -83,14 +83,14 @@ Here we read the data set we just saved:
 hp<-readRDS("hp.RDS")
 ```
 
-# subset the data according to the variables we're focusing on 
-#caluculate the sum of married people and single people
+###subset the data according to the variables we're focusing on 
+###caluculate the sum of married people and single people
 ```{r}
 hp <-tbl_df(hp)
 ```
 
 
-Next part is where we draw a box plot to show the distribution of FINCP in terms of education level, both under FES=2 and FES=3
+##Next part is where we draw a box plot to show the distribution of FINCP in terms of education level, both under FES=2 and FES=3
 
 ```{r}
 
