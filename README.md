@@ -14,7 +14,7 @@ Source of the data:
 * [2013 American Community Survey](https://www.census.gov/programs-surveys/acs/about/information-guide.html)
    
 
-*[Housing](http://www2.census.gov/acs2013_1yr/pums/csv_hus.zip)
+* [Housing](http://www2.census.gov/acs2013_1yr/pums/csv_hus.zip)
   
 
-*[Population](http://www2.census.gov/acs2013_1yr/pums/csv_pus.zip)
+* [Population](http://www2.census.gov/acs2013_1yr/pums/csv_pus.zip)
