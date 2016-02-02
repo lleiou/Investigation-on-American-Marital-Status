@@ -21,7 +21,7 @@ library("choroplethrMaps")
 
 #getting the data frame from household data
 
-```
+```{r}
 colsToKeep<-c("ST","FINCP","HINCP","FES","SERIALNO","WGTP")
 
 husa <- fread("ss13husa.csv", select=colsToKeep)
@@ -87,63 +87,8 @@ hp<-readRDS("hp.RDS")
 #caluculate the sum of married people and single people
 ```{r}
 hp <-tbl_df(hp)
-
-#remove NA in MSP column
-#and calculate the sum of the remaining individual
-hp <- hp %>%
-  na.omit(MSP)
-
-
-#Convert state number to state abbreviation
-
-ST.anno <- read.csv("statenames.csv", header=T)
-colnames(ST.anno)[1] <- "ST"
-hp <- left_join(hp, ST.anno, by = "ST")
-
 ```
 
-#calculate the sum of married people and unmarried people
-#Then calculate the married/unmarried rate across the country
-
-#mutate adds another columi to the data frame
-
-#calculate the married rate and single rate in every state
-
-```{r}
-StatePop<-hp %>%
-  group_by(ST)%>%
-  summarize(count=n())
-
-StateHp<-hp%>%
-  filter(MSP==1)%>%
-  group_by(ST)%>%
-  summarize(count=n())
-```
-
-#combine the two data set together in order to let them devide within
-#the correct group
-```{r}
-StateHp <- left_join(StateHp,ST.anno , by="ST")
-
-StateHpRate<-StateHp %>%
-  mutate ("StateHpRate" = StateHp$count/StatePop$count)
-
-
-StateHpRate<-StateHpRate %>%
-  select("region"=name,"value"=StateHpRate)
-
-
-#Change all the name of states into lower letter or the 
-#function "state_choropleth" would report a error
-StateHpRate$region <- StateHpRate$region %>% tolower()
-
-#plot the rate of the mariage in every state
-state_choropleth(StateHpRate,
-                 title = "The Rate of Mariage in Every State", 
-                 num_colors = 5,
-                 legend     = "Household",
-)
-```
 
 Next part is where we draw a box plot to show the distribution of FINCP in terms of education level, both under FES=2 and FES=3
 
