@@ -10,6 +10,7 @@ The project will keep on being updated, since it is not a homework(actually this
 I will try to update it every time I have some new idea on certain variables.
 
 Source of the data: 
-1. [2013 American Community Survey](https://www.census.gov/programs-surveys/acs/about/information-guide.html)
-2. [Housing](http://www2.census.gov/acs2013_1yr/pums/csv_hus.zip)
-3. [Population](http://www2.census.gov/acs2013_1yr/pums/csv_pus.zip)
+
+  * [2013 American Community Survey](https://www.census.gov/programs-surveys/acs/about/information-guide.html)
+  *[Housing](http://www2.census.gov/acs2013_1yr/pums/csv_hus.zip)
+  *[Population](http://www2.census.gov/acs2013_1yr/pums/csv_pus.zip)
