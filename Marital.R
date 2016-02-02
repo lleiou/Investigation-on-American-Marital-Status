@@ -51,14 +51,14 @@ hp$INDP2[hp$INDP>=9370 & hp$INDP<=9590]<-"ADM"
 hp$INDP2[hp$INDP>=9670 & hp$INDP<=9870]<-"MIL"
 hp$INDP2[hp$INDP==9920]<-"UNEMPLOYED AND LAST WORKED 5 YEARS AGO OR EARLIER OR NEVER WORKED"
 
-
-
-#for convenience, we can save the subset for future use.
-#next time when we want to use the data, we can simply load the data we saved last time.
+                                      
 save(hp, file="hp.Rdata")
+
+#####save the file
+save(pus, file="pus_selected_cols.RData")
+#####
+
 load("hp.RData")
-
-
 
 # subset the data according to the variables we're focusing on 
 #caluculate the sum of married people and single people
@@ -115,3 +115,24 @@ state_choropleth(StateHpRate,
                  legend     = "Household",
 )
 
+
+
+
+#first calculate the Education level rate for FES 1 people in every state.
+#for higher education(include and above bachelor's degree == 21):
+hp_total_state<-hp %>%
+                  group_by(ST) %>%
+                  summarize(total=n())
+            
+hp_total_SCHLhigh_state<-hp %>%
+                        filter(SCHL>=21) %>%
+                        group_by(ST) %>%
+                        summarize(total=n())
+                        
+hp_total_SCHLhighRate_state<- hp_total_SCHLhigh_state%>%
+                          mutate(rate = hp_total_SCHLhigh_state$total/hp_total_state$total)
+
+
+
+
+                        
